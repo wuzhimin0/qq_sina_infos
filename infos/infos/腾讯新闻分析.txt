@@ -1,0 +1,52 @@
+首页
+    # 左侧今日要闻
+    "https://i.match.qq.com/ninja/fragcontent?pull_urls=news_top_2018&callback=__jp0"
+
+    # 左侧热点精选的json链接，page是页码
+    "https://pacaio.match.qq.com/irs/rcd?cid=108&ext=&token=349ee24cdf9327a050ddad8c166bd3e3&page=0&expIds=&callback=__jp1"
+
+    # 右侧热门资讯
+    "https://pacaio.match.qq.com/irs/rcd?cid=4&token=9513f1a78a663e1d25b46a826f248c3c&ext=&page=0&expIds=&callback=__jp2"
+
+    # 获取分类的CID,这个链接，暂时认为是烟雾弹，大部分的id和name无用
+    "https://pacaio.match.qq.com/vlike/categories?callback=__jp3"
+
+    # 分类信息，ext是分类中的name，内容中有每个新闻页的文章url（字段是vurl），更新时间（update_time）来源（source）
+    获取每个页面的链接及id
+    "https://mat1.gtimg.com/pingjs/ext2020/configF2017/5a9cf828.js"
+分页
+    分类中的右侧的视频链接
+    "https://data.video.qq.com/fcgi-bin/data?tid=109&idlist=tcius12wx6phh45&appid=20001023&appkey=f32e6ab4af507113&otype=json"
+
+    分类中的独家原创
+    "https://pacaio.match.qq.com/irs/rcd?cid=92&token=54424c1ebe77ea829a41040a3620d0e7&ext=fashion&page=0&expIds=&callback=__jp0"
+
+    分类中的热门视频 num是分页,cid是分类信息中的cid
+    "https://pacaio.match.qq.com/vlike/category?cid=5&num=5&page=0&expIds=&callback=__jp4"
+
+    分类中的热点资讯，cid是固定的，只有ext是不同的，是每个分类的name
+    "https://pacaio.match.qq.com/irs/rcd?cid=135&token=6e92c215fb08afa901ac31eca115a34f&ext=fashion&page=0&callback=jspnphotnews"
+
+    分类中的主信息
+    "https://pacaio.match.qq.com/irs/rcd?cid=146&token=49cbb2154853ef1a74ff4e53723372ce&ext=fashion&page=0&callback=__jp6"
+
+    城市信息
+    https://mat1.gtimg.com/house/js/h5rewrite.js
+专题页
+    专题页
+    "https://openapi.inews.qq.com/getQQNewsSpecialListItems?refer=mobileqqcom&otype=jsonp&srcfrom=newsapp&id=FAS2019031200396800&callback=getSpecialNews"
+
+    专题文章页
+    "https://openapi.inews.qq.com/getQQNewsNormalContent?id=20190311A1GCJX00&chlid=news_rss&refer=mobilewwwqqcom&otype=jsonp&ext_data=all&srcfrom=newsapp&callback=getNewsContentOnlyOutput"
+
+    视频页
+    "https://pacaio.match.qq.com/vlike/detail?vid=j0848u3o8t4&callback=_jsonp0gqzfl0ollcd"
+
+    视频在MEDIA中查找，他的链接在XHR的proxy的返回值中查找，proxy是一个post的请求，传值暂时未找到
+    "https://vd.l.qq.com/proxyhttp"post传值后可获得视频的连接和vkey（guid和sdtfrom是固定的）链接中的文件名是vid
+    传值内容：{
+    (adparam:需要vid(文章上的id) flowid  rfid)
+    adparam: "pf=out&ad_type=LD%7CKB%7CPVL&pf_ex=pc&url=https%3A%2F%2Fnew.qq.com%2Fomv%2Fvideo%2Fj0848u3o8t4&refer=https%3A%2F%2Fnew.qq.com%2Fomv%2Fvideo%2Fj0848u3o8t4&ty=web&plugin=1.0.0&v=3.4.40&coverid=&vid=j0848u3o8t4&pt=&flowid=7dcf5434ec2787b2fe3e17673dfb0cac_70201&vptag=&pu=0&chid=0&adaptor=2&dtype=1&live=0&resp_type=json&guid=99ab50bf7edc985684c0f0dc30b30494&req_type=1&from=0&appversion=1.0.139&platform=70201&rfid=26a62e31f3ea4d061d0872f75d47c440_1552551044"
+    buid: "vinfoad"
+    vinfoparam: "charge=0&defaultfmt=auto&otype=ojson&guid=99ab50bf7edc985684c0f0dc30b30494&flowid=7dcf5434ec2787b2fe3e17673dfb0cac_70201&platform=70201&sdtfrom=v1104&defnpayver=0&appVer=3.4.40&host=new.qq.com&ehost=https%3A%2F%2Fnew.qq.com%2Fomv%2Fvideo%2Fj0848u3o8t4&refer=new.qq.com&sphttps=1&tm=1552552536&spwm=4&logintoken=%7B%22main_login%22%3A%22%22%2C%22openid%22%3A%22%22%2C%22appid%22%3A%22%22%2C%22access_token%22%3A%22%22%2C%22vuserid%22%3A%22%22%2C%22vusession%22%3A%22%22%7D&unid=1b313733455f11e99d19a0424b63310a&vid=j0848u3o8t4&defn=&fhdswitch=0&show1080p=0&isHLS=1&dtype=3&sphls=1&spgzip=&dlver=&drm=32&hdcp=0&spau=1&spaudio=15&defsrc=1&encryptVer=8.1&cKey=EC310865B7A85E49139857D1580B2754C80D692D46C30C8822A2676775004F21E20148029CC68B3E4029057B330A47D14D57F5C4E4D309EF67E1D421C053E3E1BFF64AA70A7505A495466D04E83FB79C31437EA2610E9306214A142F3D12E02B7C82C557E9A86065C42FD10A87F8CC3A6C1A3E8D1C4F2D6442B44FD09945976A91AFFE55599D72D963973EDB8634AD7FD8C16EEAA2D9961E29BFEC05AC8F9A5CBF1B98F04089C88DDA70106BD8AFAADC42A2FD0AAB6E63A73DD4E7488FF9A996F8B54E36D048C186F04F3583C1207BB3870A57BC1BED256EA04A33F72D285F33"
+    }
